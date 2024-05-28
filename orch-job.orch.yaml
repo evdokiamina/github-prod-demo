@@ -1,0 +1,31 @@
+type: "orchestration"
+version: "1.0"
+pipeline:
+  components:
+    Start:
+      type: "start"
+      transitions:
+        unconditional:
+        - "Alter Table"
+      parameters:
+        componentName: "Start"
+    Alter Table:
+      type: "alter-table"
+      parameters:
+        componentName: "Alter Table"
+        targetTable:
+        schema: "[Environment Default]"
+        database: "[Environment Default]"
+        searchOptimizationService: "Off"
+design:
+  components:
+    Start:
+      position:
+        x: 0
+        "y": 0
+      tempMetlId: 1
+    Alter Table:
+      position:
+        x: 120
+        "y": 0
+      tempMetlId: 2
