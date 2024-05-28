@@ -4,8 +4,17 @@ pipeline:
   components:
     Start:
       type: "start"
+      transitions:
+        unconditional:
+        - "Alter Warehouse"
       parameters:
         componentName: "Start"
+    Alter Warehouse:
+      type: "alter-warehouse"
+      parameters:
+        componentName: "Alter Warehouse"
+        warehouse: "[Environment Default]"
+        commandType: "Resume"
 design:
   components:
     Start:
@@ -13,3 +22,8 @@ design:
         x: 0
         "y": 0
       tempMetlId: 1
+    Alter Warehouse:
+      position:
+        x: 120
+        "y": 0
+      tempMetlId: 2
