@@ -1,3 +1,18 @@
 type: "transformation"
 version: "1.0"
-pipeline: {}
+pipeline:
+  components:
+    Aggregate:
+      type: "aggregate"
+      parameters:
+        componentName: "Aggregate"
+        groupings:
+        aggregations:
+        groupingType: "Group By"
+design:
+  components:
+    Aggregate:
+      position:
+        x: 0
+        "y": 0
+      tempMetlId: 1
